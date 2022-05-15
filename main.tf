@@ -9,4 +9,3 @@ resource "aws_vpc" "main" {
     "Name" = "sample_vpc"
   }
 }
-
