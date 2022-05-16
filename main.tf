@@ -21,3 +21,13 @@ resource "aws_subnet" "public_1a" {
     "Name" = "sample_subnet"
   }
 }
+
+resource "aws_instance" "ec2-instance" {
+  ami = "ami-02c3627b04781eada"
+ instance_type = "t2.micro"
+ subnet_id = "${aws_subnet.public_1a.id}"
+
+ tags = {
+   "Name" = "sample_ec2"
+ }
+}
